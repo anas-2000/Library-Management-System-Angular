@@ -1,0 +1,47 @@
+<div class = "tab">
+    <button class = "tablinks" (click)= "showForm()">Register User</button>
+    <button class = "tablinks" (click) = "showRequests()">View Requests</button>
+</div>
+
+<div id = "form" class = "tabcontent">
+    <form [formGroup] = "userform" (ngSubmit) ="RegisterUser(userform)">
+        <input formControlName ="name" placeholder="name">
+        <br>
+        <input formControlName = "username" placeholder="username">
+        <br>
+        <input formControlName = "password" placeholder="password">
+        <br>
+        <input formControlName = "department" placeholder="Department"> - For Students/Faculty
+        <br>
+        <input formControlName = "address" placeholder="Address"> - For Suppliers
+        <br>
+        <select formControlName = "usertype" placeholder= "type">
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="supplier">Supplier</option>
+            <option value="admin">Admin</option>
+        </select>
+        <br>
+        <button type = "submit" [disabled] = "userform.invalid">Register</button>
+        <br>
+        <label>{{message}}</label>
+    </form>
+</div>
+<div id="requests" class = "tabcontent">
+    <table>
+        <th>Request ID</th>
+        <th>User's ID</th>
+        <th>Book ID</th>
+        <th>Status</th>
+        <tr *ngFor = "let r of requests" (mouseover)="showAction()">
+            <td>{{r.request_id}}</td>
+            <td>{{r.u_id}}</td>
+            <td>{{r.b_id}}</td>
+            <td>{{r.status}}</td>
+        </tr>
+        <div class ="action" id = "actionContainer">
+        <input type="button" class = "btn" value="Approve" (click)="approveRequest()">
+        <input type = "button" class= "btn" value ="Deny" (click) = "denyRequest()">
+    </div>
+    </table>
+</div>

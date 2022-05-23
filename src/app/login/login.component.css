@@ -1,0 +1,17 @@
+.container1{
+    border-style: solid;
+    border:black;
+    position: absolute;
+    left: 800px;
+    top: 400px;
+    
+}
+input{
+    margin-bottom: 20px;
+    height: 22px;
+}
+.label{
+    font-size: xx-large;
+    font-family:'Times New Roman';
+    color: dodgerblue;
+}

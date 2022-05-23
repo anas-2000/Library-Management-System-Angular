@@ -1,0 +1,14 @@
+<div *ngFor = "let b of book; let i = index">
+    <div class = "container1">
+        <a [href] = b.url target="blank"><img [src] = b.i_url class="thumbnail"></a>
+    <br>
+    <a [href] = b.url target="blank"><div class = "container2">{{b.name}}<br>
+        id: {{b.id}} <br>
+        quantity available: {{b.quantity}}
+        
+    </div>
+    </a>
+    <input type="button" class="rqbtn" value="Request" (click) = 'RequestBook(i)'>
+    </div>
+    
+</div>

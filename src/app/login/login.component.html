@@ -1,0 +1,21 @@
+<div class = "container1">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <label class="label">Sign in</label><br><br>
+        <input formControlName = "username" placeholder="username">
+        <br>
+        <input formControlName  = "password" placeholder="password" type="password">
+        <br>
+
+        <select formControlName = "usertype" placeholder= "type" style="margin-bottom: 20px;width: 100px; height: 22px;">
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="supplier">Supplier</option>
+            <option value="admin">Admin</option>
+        </select>
+        <br>
+        <button type = "submit" [disabled] = "myForm.invalid" style="width: 100px;">Log in</button>
+        <br>
+        <label>{{message}}</label>
+       
+    </form>
+</div>
